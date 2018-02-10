@@ -1,0 +1,14 @@
+.Team {
+  margin: 12px;
+}
+
+.Team img {
+  width: 200px;
+  height: 200px;
+  transform: scale(0.85);
+  transition: all .2s ease-in-out;
+}
+
+.Team img:hover {
+  transform: scale(1);
+}

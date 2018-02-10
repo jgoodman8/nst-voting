@@ -1,0 +1,7 @@
+.Team-List {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  align-items: center;
+  margin: 25px 15px 25px 15px;
+}

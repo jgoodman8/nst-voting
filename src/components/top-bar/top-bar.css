@@ -1,0 +1,11 @@
+.Top-Bar {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.Top-Bar-Scan {
+  right: 30px;
+  /*top: 30px;*/
+  position: fixed;
+}

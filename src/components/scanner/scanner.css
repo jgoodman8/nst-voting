@@ -1,0 +1,40 @@
+#scanner {
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  vertical-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+#scanner video {
+  width: 80% !important;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+#scanner canvas {
+  width: 100% !important;
+  height: 0 !important;
+}
+
+
+.Scanner-wrapper {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  vertical-align: center;
+  align-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.Scanner-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
