@@ -2,9 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Quagga from 'quagga';
 import './scanner.css'
-import {Button, Icon, IconButton} from "material-ui";
+import { Button, Icon, IconButton } from "material-ui";
 import KeyboardArrowRight from 'material-ui-icons/KeyboardArrowRight';
-import {browserHistory} from "react-router";
+import { browserHistory } from "react-router";
 
 export default class Scanner extends React.Component {
 
@@ -20,6 +20,10 @@ export default class Scanner extends React.Component {
     this.handleDetected = this.handleDetected.bind(this);
     this.showScanner = this.showScanner.bind(this);
     this.hideScanner = this.hideScanner.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.stop();
   }
 
   goBack() {

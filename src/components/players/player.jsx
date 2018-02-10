@@ -84,7 +84,7 @@ export default class Player extends React.Component {
           <div className="Player-Content">
             <img src={player.photo} onClick={this.goToProfile}/>
             <div className="Player-Info">
-              <CardContent>
+              <CardContent className="player-title">
                 <Typography variant="headline" component="h2">
                   {player.player_name}
                 </Typography>

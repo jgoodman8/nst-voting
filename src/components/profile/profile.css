@@ -1,5 +1,24 @@
 .profile {
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  /*margin-top: -10px;*/
+  /*z-index: 0;*/
+}
+
+.charts {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.linear-chart-wrapper {
+  margin-top: 70px;
+}
+
+.profile-header {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #7986cc;
   display: flex;
   flex-direction: column;
 }

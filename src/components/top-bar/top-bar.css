@@ -6,6 +6,5 @@
 
 .Top-Bar-Scan {
   right: 30px;
-  /*top: 30px;*/
-  position: fixed;
+  position: absolute;
 }

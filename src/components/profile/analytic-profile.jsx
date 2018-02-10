@@ -2,6 +2,7 @@ import React from "react";
 import { abiArray } from '../../abi';
 import './profile.css';
 import RadarAnalytic from "./radar-analtic";
+import LinearChart from "./linar-chart";
 
 const Web3 = require('web3');
 
@@ -52,12 +53,16 @@ export default class AnalyticProfile extends React.Component {
 
     return (
       <div className="profile">
-        <img className="profile-photo" src={player.photo}/>
-        <p className="profile-name">{player.player_name}</p>
-        <spam className="profile-subtitle">{player.birth_date}</spam>
-        <spam className="profile-subtitle">{player.height}</spam>
-
-        <RadarAnalytic/>
+        <div class="profile-header">
+          <img className="profile-photo" src={player.photo}/>
+          <p className="profile-name">{player.player_name}</p>
+          <spam className="profile-subtitle">{player.birth_date}</spam>
+          <spam className="profile-subtitle">{player.height}</spam>
+        </div>
+        <div className="charts">
+          <RadarAnalytic/>
+          <LinearChart/>
+        </div>
       </div>
     )
   }
