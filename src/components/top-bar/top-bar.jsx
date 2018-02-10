@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {AppBar, IconButton, Toolbar, Typography} from 'material-ui';
+import { AppBar, IconButton, Toolbar, Typography } from 'material-ui';
 import MenuIcon from 'material-ui-icons/Menu';
-import AddIcon from 'material-ui-icons/Add';
+import FlipIcon from 'material-ui-icons/Flip';
 import './top-bar.css'
-import {browserHistory} from "react-router";
+import { browserHistory } from "react-router";
 
 export default class TopBar extends React.Component {
 
@@ -28,7 +28,7 @@ export default class TopBar extends React.Component {
           </Toolbar>
           <div className="Top-Bar-Scan">
             <IconButton onClick={this.goToScan}>
-              <AddIcon style={{color: 'white'}}/>
+              <FlipIcon style={{color: 'white', fontSize: '26px'}}/>
             </IconButton>
           </div>
         </AppBar>

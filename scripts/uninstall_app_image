@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sed -i '/appimagekit-smartClassroom/d' ~/.local/share/applications/mimeinfo.cache
+rm ~/.local/share/applications/appimagekit-smartClassroom.desktop
+rm -rf ~/.config/smartClassroom

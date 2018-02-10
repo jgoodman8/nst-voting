@@ -19,7 +19,7 @@ export default class Team extends React.Component {
 
     return (
       <div className="Team" onClick={this.goToTeam}>
-        <img src={team.img}/>
+        <img src={team.image}/>
       </div>
     )
   }

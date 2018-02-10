@@ -10,6 +10,14 @@ export const abiArray = [{
   "stateMutability": "nonpayable",
   "type": "function"
 }, {
+  "constant": true,
+  "inputs": [{"name": "player", "type": "string"}],
+  "name": "getPositive",
+  "outputs": [{"name": "reputation", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
   "constant": false,
   "inputs": [{"name": "namespace", "type": "string"}, {"name": "key", "type": "bytes32"}],
   "name": "allow",
@@ -20,7 +28,7 @@ export const abiArray = [{
 }, {
   "constant": true,
   "inputs": [{"name": "player", "type": "string"}],
-  "name": "getReputation",
+  "name": "getNegative",
   "outputs": [{"name": "reputation", "type": "uint256"}],
   "payable": false,
   "stateMutability": "view",
@@ -61,4 +69,4 @@ export const abiArray = [{
   }, {"indexed": false, "name": "namespace", "type": "string"}],
   "name": "Vote",
   "type": "event"
-}]
+}];

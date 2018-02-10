@@ -1,16 +1,15 @@
 import React from "react";
 import Team from "./team";
 import './team-list.css'
-
-const DEFAULT_IMG_SRC = "http://104.199.70.204/wp-content/uploads/2015/10/divina-seguros-joventut.jpg";
+import { defaultTeams } from "../../logic/teams";
 
 export default class TeamList extends React.Component {
 
   renderTeams() {
-    const teams = [DEFAULT_IMG_SRC, "http://104.199.70.204/wp-content/uploads/2015/10/baskonia-vitoria-gasteiz.png", DEFAULT_IMG_SRC, DEFAULT_IMG_SRC, DEFAULT_IMG_SRC];
+    const teams = JSON.parse(JSON.stringify(defaultTeams));
     const teamComponents = [];
 
-    teams.forEach((team, i) => teamComponents.push(<Team team={{id: i, img: team}}/>));
+    teams.forEach(team => teamComponents.push(<Team team={team}/>));
 
     return teamComponents;
   }

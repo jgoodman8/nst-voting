@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Base",
+      "surname": "Instructor",
+      "userId": "base_instructor@mail.com",
+      "email": "base_instructor@mail.com",
+      "password": "000000",
+      "repeatPassword": "000000",
+      "picture": "/server/base_instructor.jpg",
+      "role": "INSTRUCTOR",
+      "institutionId": 1
+    },
+    {
+      "id": 2,
+      "name": "Base",
+      "surname": "Student",
+      "userId": "base_student@mail.com",
+      "email": "base_student@mail.com",
+      "password": "000000",
+      "repeatPassword": "000000",
+      "picture": "/server/base_student.jpg",
+      "role": "STUDENT"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,10 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import Quagga from 'quagga';
-import './scanner.css'
-import { Button, Icon, IconButton } from "material-ui";
+import { IconButton } from "material-ui";
 import KeyboardArrowRight from 'material-ui-icons/KeyboardArrowRight';
 import { browserHistory } from "react-router";
+import { abiArray } from "../../abi";
+import './scanner.css'
+
+const Web3 = require('web3');
+
+const contractAddress = "0x170A4B2Ec65B79cd4956E7c9712713326F97ee05";
+const PROVIDER = "https://ropsten.infura.io/ePYYGdA9cUhr3uMfYwSP";
+const institution = "obradoiro";
 
 export default class Scanner extends React.Component {
 
@@ -12,7 +18,8 @@ export default class Scanner extends React.Component {
     super();
 
     this.state = {
-      scannerState: false
+      scannerState: false,
+      votes: null
     };
 
     this.init = this.init.bind(this);
@@ -20,6 +27,7 @@ export default class Scanner extends React.Component {
     this.handleDetected = this.handleDetected.bind(this);
     this.showScanner = this.showScanner.bind(this);
     this.hideScanner = this.hideScanner.bind(this);
+    this.fetchPendingVotes = this.fetchPendingVotes.bind(this);
   }
 
   componentWillUnmount() {
@@ -74,6 +82,7 @@ export default class Scanner extends React.Component {
     if (err) {
       console.log(err);
       Quagga.stop();
+      browserHistory.push('/home');
     } else {
       console.log("Initialization finished. Ready to start");
       Quagga.start();
@@ -82,9 +91,29 @@ export default class Scanner extends React.Component {
   }
 
   handleDetected(data) {
+    console.log(data);
     if (data) {
       console.log('handleDetected', data.codeResult);
       Quagga.stop();
+      this.fetchPendingVotes(data.codeResult.code);
+    }
+  }
+
+  toBytesArray(str) {
+    return Web3.utils.asciiToHex(str);
+  }
+
+  fetchPendingVotes(code) {
+    code = this.toBytesArray(code);
+
+    if (typeof this.web3 !== 'undefined') {
+      this.web3 = new Web3(this.web3.currentProvider);
+    } else {
+      this.web3 = new Web3(new Web3.providers.HttpProvider(PROVIDER));
+      this.contract = new this.web3.eth.Contract(abiArray, contractAddress);
+      this.contract.methods.getPendingVotes(institution, code).call((error, result) => {
+        this.setState({votes: result});
+      });
     }
   }
 
@@ -98,19 +127,32 @@ export default class Scanner extends React.Component {
     )
   }
 
+  renderCenter() {
+    const votes = this.state.votes;
+    const hole = <div className="scanner-hole"/>;
+    const info = <div className="info-votes">{`Te quedan ${votes} por gastar`}</div>;
+    const none = <div className="info-votes">{`No te quedan más votos disponibles`}</div>;
+
+    return votes !== null ? votes === 0 ? none : info : hole;
+  }
+
   render() {
     const {scannerActive} = this.state;
     const scannerClass = scannerActive ? 'active' : '';
 
     return (
-      <div className="Scanner-wrapper">
-        {this.renderBar()}
+      <div>
         <div id="scanner" className={scannerClass}/>
-        {/*<div className="Scanner-button">*/}
-        {/*<Button variant="fab" color="primary" aria-label="add" onClick={this.showScanner}>*/}
-        {/*<AddIcon/>*/}
-        {/*</Button>*/}
-        {/*</div>*/}
+        <div className="Scanner-wrapper">
+          {this.renderBar()}
+          <div className="faker-row"/>
+          <div className="central-row">
+            <div className="fake-column"/>
+            {this.renderCenter()}
+            <div className="fake-column"/>
+          </div>
+          <div className="faker-row"/>
+        </div>
       </div>
     );
   }

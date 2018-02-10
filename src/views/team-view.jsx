@@ -7,7 +7,7 @@ export default class TeamView extends React.Component {
     return (
       <div>
         <TopBar text={'NST Voting'}/>
-        <PlayerList/>
+        <PlayerList id={this.props.params.id}/>
       </div>
     );
   }

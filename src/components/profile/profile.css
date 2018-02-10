@@ -38,3 +38,10 @@
   color: white;
   margin: 5px;
 }
+
+.profile-subtitle-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}

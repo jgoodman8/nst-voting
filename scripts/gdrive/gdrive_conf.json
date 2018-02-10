@@ -1,0 +1,16 @@
+{
+  "folderIds": {
+    "root": "0B_oy4IQsP8oiMzNlcU5GSWRwSDg",
+    "pre": "0B7f_8y2wquRDR2EwUmdPR0poZ1E",
+    "pro": "0B7f_8y2wquRDZ2N4TndyNGV3LVk",
+    "dev": "0B7f_8y2wquRDV1VESTFLM2pncGc",
+    "demo": "0BwwykMhjuS_oSU5lbnpDVTJWLXM",
+    "test": "0BwwykMhjuS_ocjAtWmNScmtFeU0"
+  },
+  "updateFiles": true,
+  "scopes": [
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive.appdata"
+  ]
+}

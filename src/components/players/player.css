@@ -20,6 +20,22 @@
   align-self: left;
 }
 
+.player-title h2 {
+  color: #3f51b5;
+}
+
+.player-age {
+  text-align: left;
+  color: #333;
+}
+
+.player-position {
+  text-align: left;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 .Player-Info {
   display: flex;
   width: 100%;

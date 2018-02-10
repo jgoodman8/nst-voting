@@ -1,10 +1,11 @@
 import React from "react";
 import './player.css';
-import {Card, CardActions, CardContent, IconButton, Snackbar, Typography} from "material-ui";
+import { Card, CardActions, CardContent, IconButton, Snackbar, Typography } from "material-ui";
 import ThumbUp from 'material-ui-icons/ThumbUp';
 import ThumbDown from 'material-ui-icons/ThumbDown';
 import CloseIcon from 'material-ui-icons/Close';
-import {browserHistory} from "react-router";
+import { browserHistory } from "react-router";
+import { dictionary, getYears } from "../../logic/players";
 
 const styles = {
   color: 'grey'
@@ -33,7 +34,7 @@ export default class Player extends React.Component {
 
   goToProfile() {
     const {player} = this.props;
-    browserHistory.push(`/player/${player.id}`);
+    browserHistory.push(`/player/${player.cod_player}`);
   }
 
   handleClose = (event, reason) => {
@@ -75,8 +76,8 @@ export default class Player extends React.Component {
 
   render() {
     const {player} = this.props;
-
     const message = this.renderMessage();
+    const age = getYears(player.birth_date);
 
     return (
       <div className="Player">
@@ -88,6 +89,8 @@ export default class Player extends React.Component {
                 <Typography variant="headline" component="h2">
                   {player.player_name}
                 </Typography>
+                <p className="player-age">{`${age} años`}</p>
+                <p className="player-position">{dictionary[player.position]}</p>
               </CardContent>
               <CardActions className="Player-Vote">
                 <IconButton onClick={this.vote}>
