@@ -1,0 +1,28 @@
+.Player {
+  margin: 12px;
+  /*height: 300px;*/
+  width: 500px;
+}
+
+.Player-Content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.Player-Content img {
+  zoom: 1.25;
+  margin: 5px;
+  border-radius: 100%;
+}
+
+.Player-Info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.Player-Vote {
+  position: absolute;
+  bottom: 10px;
+}

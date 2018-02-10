@@ -1,0 +1,21 @@
+.profile {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-photo {
+  border-radius: 100%;
+  zoom: 1.25;
+  align-self: center;
+}
+
+.profile-name {
+  color: white;
+  font-size: x-large;
+}
+
+.profile-subtitle {
+  color: white;
+  margin: 5px;
+}

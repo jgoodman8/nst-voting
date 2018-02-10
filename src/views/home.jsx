@@ -1,6 +1,6 @@
 import React from "react";
-import TopBar from "../top-bar/top-bar";
-import TeamList from "../teams/team-list";
+import TopBar from "../components/top-bar/top-bar";
+import TeamList from "../components/teams/team-list";
 //
 // const styles = {
 //   root: {

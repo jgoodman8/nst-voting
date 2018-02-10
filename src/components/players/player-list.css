@@ -1,0 +1,7 @@
+.Player-List {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px 5% 25px 5%;
+}
